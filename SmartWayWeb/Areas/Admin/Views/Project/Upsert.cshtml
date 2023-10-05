@@ -1,0 +1,84 @@
+﻿@model SmartWay.Models.ViewModels.ProjectVM
+
+<form method="post" asp-action= "Upsert" enctype="multipart/form-data"> @*to upload*@
+    <input asp-for="Project.Id" hidden />
+    <input id="uploaded" hidden type="file" asp-for="Project.ProjectImage" name="file"/>
+    <div class="row">
+         <div class="col-8">
+          
+            <div class="border border-secondary rounded bg-active p-3 mt-4 row">
+            <div class="row pb-2">
+                <h2 class="text-dark my-2">@(Model.Project.Id!=0?"Update": "Create") Project</h2>
+                <hr />
+            </div>
+    
+            <div class="mb-3">
+                <label asp-for="Project.Name"  class="col-form-label mt-2"></label>
+                <input asp-for="Project.Name" class="form-control" placeholder="Project Name" />
+                <span asp-validation-for="Project.Name" class="text-danger"></span>
+            </div> 
+            <div class="mb-3">
+                <label asp-for="Project.Description"  class="col-form-label mt-2"></label>
+                <textarea asp-for="Project.Description" class="form-control" rows="3" placeholder="Project Description.."></textarea>
+                <span asp-validation-for="Project.Description" class="text-danger"></span>
+            </div>  
+            
+            <div class="form-group col-6">
+              <label asp-for="Project.CategoryId" class="col-form-label mt-2"></label>
+              <select asp-for="Project.CategoryId" asp-items="@Model.CategoryList" class="form-select">
+                  <option disabled selected>--Select Category--</option>
+              </select>
+              <span asp-validation-for="Project.CategoryId" class="text-danger"></span>
+            </div>    
+           
+
+            <div class="col-12">
+                @if(Model.Project.Id!=0){
+                    <button type="submit" class="btn btn-dark mt-4" style="width:165px">Update</button>
+                }
+                else{
+                    <button type="submit" onclick="return ValidateInput()" class="btn btn-dark mt-4" style="width:165px">Create</button>
+                }
+            <a asp-controller="Project" asp-action="Index" class="btn btn-secondary mt-4" style="width:165px">
+                Back To Projects
+            </a>
+            </div>
+            </div>
+        </div>        
+        <div class="col-4 pt-4">
+            <label asp-for="Project.ProjectImage"  class="col-form-label mt-2"></label>
+
+            <div style="border:1px solid #abb2b9; border-radius:5px; width: 100%;">
+            @if (Model.Project.ProjectImage != null)
+            {
+                <img id="ProjectImage" alt="Project Image" src="data:image/*;base64,@(Convert.ToBase64String(Model.Project.ProjectImage))" class="card-img rounded"/>
+            }
+            else{
+                <img id="ProjectImage" alt="Project Image" src="~/img/portfolio/image.png" class="card-img rounded"/>
+            }
+            </div>
+            <br />
+            <input id="uploadBox" type="file" accept="image/*" asp-for="Project.ProjectImage" name="file" class="form-control" 
+            onchange="document.getElementById('ProjectImage').src = window.URL.createObjectURL(this.files[0])"/>
+            <span asp-validation-for="Project.ProjectImage" class="text-danger"></span>
+        </div>
+        
+    </div>
+   </div>
+
+</form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    
+    <script>
+	    function ValidateInput(){
+		    if(document.getElementById("uploadBox").value==""){
+                toastr.options.positionClass = "toast-bottom-right";
+			    toastr.error('Please upload an Image!');
+			    return false;
+		    }
+		    return true;
+	    }
+    </script>
+}

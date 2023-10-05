@@ -1,0 +1,47 @@
+﻿@model SmartWay.Models.Category
+
+<form method="post" asp-action= "Upsert" enctype="multipart/form-data"> @*to upload*@
+    <input asp-for="Id" hidden />
+
+    <div class="row">
+         <div class="col-12">
+            <div class="border border-secondary rounded bg-active p-3 mt-4 row">
+            <div class="row pb-2">
+                <h2 class="text-dark my-2">@(Model.Id!=0?"Update": "Create") Category</h2>
+                <hr />
+            </div>
+
+            @*    <div asp-validation-summary="All"> </div>   *@
+
+    
+            <div class="mb-3">
+                <label asp-for="Name"  class="col-form-label mt-2"></label>
+                <input asp-for="Name" class="form-control" placeholder="Category Name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div> 
+            
+            
+            <div class="col-12">
+                @if(Model.Id!=0){
+                    <button type="submit" class="btn btn-dark mt-4" style="width:165px">Update</button>
+                }
+                else{
+                    <button type="submit" class="btn btn-dark mt-4" style="width:165px">Create</button>
+                }
+            <a asp-controller="Category" asp-action="Index" class="btn btn-secondary mt-4" style="width:165px">
+                Back To Categories
+            </a>
+            </div>
+            </div>
+        </div>        
+    </div>
+   </div>
+
+</form>
+
+@section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial" />
+    }
+
+}
