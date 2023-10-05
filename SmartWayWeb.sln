@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWayWeb", "SmartWayWeb\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWay.DataAccess", "SmartWay.DataAccess\SmartWay.DataAccess.csproj", "{A4CEED90-164F-4B33-8FB1-98E59401C008}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWay.Models", "SmartWay.Models\SmartWay.Models.csproj", "{32B42C93-5BB5-4008-BED1-ACDE17406E02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWay.Utility", "SmartWay.Utility\SmartWay.Utility.csproj", "{04DC7932-4A72-44EA-91D8-D6AAD639C18C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{A4CEED90-164F-4B33-8FB1-98E59401C008}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4CEED90-164F-4B33-8FB1-98E59401C008}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4CEED90-164F-4B33-8FB1-98E59401C008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32B42C93-5BB5-4008-BED1-ACDE17406E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32B42C93-5BB5-4008-BED1-ACDE17406E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32B42C93-5BB5-4008-BED1-ACDE17406E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32B42C93-5BB5-4008-BED1-ACDE17406E02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04DC7932-4A72-44EA-91D8-D6AAD639C18C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04DC7932-4A72-44EA-91D8-D6AAD639C18C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04DC7932-4A72-44EA-91D8-D6AAD639C18C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04DC7932-4A72-44EA-91D8-D6AAD639C18C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

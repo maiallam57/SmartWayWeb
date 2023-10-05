@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SmartWayWeb.Models;
+using SmartWay.Models;
 using System.Diagnostics;
 
 namespace SmartWayWeb.Controllers

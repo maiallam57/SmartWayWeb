@@ -14,6 +14,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SmartWay.DataAccess\SmartWay.DataAccess.csproj" />
+    <ProjectReference Include="..\SmartWay.Models\SmartWay.Models.csproj" />
+    <ProjectReference Include="..\SmartWay.Utility\SmartWay.Utility.csproj" />
   </ItemGroup>
 
 </Project>

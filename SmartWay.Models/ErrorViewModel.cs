@@ -1,4 +1,4 @@
-namespace SmartWayWeb.Models
+namespace SmartWay.Models
 {
     public class ErrorViewModel
     {
