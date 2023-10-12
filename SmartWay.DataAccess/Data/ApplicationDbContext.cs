@@ -11,5 +11,6 @@ namespace SmartWay.DataAccess.Data
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Project> Projects { get; set; }
+        public DbSet<UserContact> UserContacts { get; set; }
     }
 }

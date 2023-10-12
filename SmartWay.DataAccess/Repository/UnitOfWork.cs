@@ -13,11 +13,13 @@ namespace SmartWay.DataAccess.Repository
             _db = db;
             Category = new CategoryRepository(_db);
             Project = new ProjectRepository(_db);
+            UserContact = new UserContactRepository(_db);
 
         }
 
         public ICategoryRepository Category { get; private set; }
         public IProjectRepository Project { get; private set; }
+        public IUserContactRepository UserContact { get; private set; }
 
         public void Save()
         {

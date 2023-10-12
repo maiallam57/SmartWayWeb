@@ -1,83 +1,41 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
+using SmartWay.DataAccess.Repository.IRepository;
+using SmartWay.Models;
 
 namespace SmartWay.Areas.Customer.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: HomeController
-        public ActionResult Index()
+        private readonly IUnitOfWork _unitOfWork;
+        //private readonly IEmailSender _emailSender;
+        public HomeController(IUnitOfWork unitOfWork/*, IEmailSender emailSender*/)
+        {
+            _unitOfWork = unitOfWork;
+            //_emailSender = emailSender;
+        }
+
+        [HttpGet]
+        public IActionResult Index()
         {
             return View();
         }
 
-        // GET: HomeController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: HomeController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: HomeController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public IActionResult Index(UserContact User)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            //IEnumerable<Project> projectList = _unitOfWork.Project.GetAll(includeProperties: "Category");
+            _unitOfWork.UserContact.Add(User);
+            _unitOfWork.Save();
+            TempData["success"] = "Your Messege Sended Successfully";
+            return View();
+           
         }
 
-        // GET: HomeController/Edit/5
-        public ActionResult Edit(int id)
+        public IActionResult Error()
         {
             return View();
         }
 
-        // POST: HomeController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: HomeController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: HomeController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

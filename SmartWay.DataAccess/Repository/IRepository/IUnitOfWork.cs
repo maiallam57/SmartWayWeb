@@ -10,7 +10,7 @@ namespace SmartWay.DataAccess.Repository.IRepository
     {
         ICategoryRepository Category { get; }
         IProjectRepository Project { get; }
-
+        IUserContactRepository UserContact { get; }
         void Save();
     }
 }
