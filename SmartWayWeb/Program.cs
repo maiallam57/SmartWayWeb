@@ -1,9 +1,9 @@
-using SmartWay.DataAccess;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SmartWay.DataAccess.Data;
 using SmartWay.DataAccess.Repository.IRepository;
 using SmartWay.DataAccess.Repository;
+using SmartWay.DataAccess.DbInitializer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,14 +13,14 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")
     ));
-//builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-//    .AddEntityFrameworkStores<ApplicationDbContext>()
-//    .AddDefaultTokenProviders()
-//    .AddDefaultUI();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders()
+    .AddDefaultUI();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 //builder.Services.AddSingleton<IEmailSender, EmailSender>();
-//builder.Services.AddScoped<IDbInitializer, DbInitializer>();
+builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 var app = builder.Build();
@@ -39,11 +39,11 @@ app.UseStatusCodePagesWithRedirects("/StatusCodeError/{0}");
 app.UseStaticFiles();
 
 app.UseRouting();
-//SeedDatabase();
+SeedDatabase();
 
-app.UseAuthentication(); ;
-
+app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
@@ -51,11 +51,11 @@ app.MapControllerRoute(
 
 app.Run();
 
-//void SeedDatabase()
-//{
-//    using (var scope = app.Services.CreateScope())
-//    {
-//        var dbInitializer = scope.ServiceProvider.GetRequiredService<IDbInitializer>();
-//        dbInitializer.Initialize();
-//    }
-//}
+void SeedDatabase()
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbInitializer = scope.ServiceProvider.GetRequiredService<IDbInitializer>();
+        dbInitializer.Initialize();
+    }
+}

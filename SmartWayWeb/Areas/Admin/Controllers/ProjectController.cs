@@ -10,8 +10,8 @@ using Newtonsoft.Json;
 
 namespace SmartWay.Areas.Admin.Controllers
 {
-    //[Area("Admin")]
-    //[Authorize(Roles = SD.Role_Admin)]
+    [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
 
     public class ProjectController : Controller
     {

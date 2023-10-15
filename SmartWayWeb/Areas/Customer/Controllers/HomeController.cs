@@ -1,21 +1,18 @@
-﻿using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SmartWay.DataAccess.Repository.IRepository;
 using SmartWay.Models;
 
 namespace SmartWay.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
-        //private readonly IEmailSender _emailSender;
-        public HomeController(IUnitOfWork unitOfWork/*, IEmailSender emailSender*/)
+        public HomeController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            //_emailSender = emailSender;
         }
 
-        [HttpGet]
         public IActionResult Index()
         {
             return View();
