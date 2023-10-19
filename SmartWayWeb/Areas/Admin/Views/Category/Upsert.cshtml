@@ -1,8 +1,8 @@
 ﻿@model SmartWay.Models.Category
 
+<div  class="container">
 <form method="post" asp-action= "Upsert" enctype="multipart/form-data"> @*to upload*@
     <input asp-for="Id" hidden />
-
     <div class="row">
          <div class="col-12">
             <div class="border border-secondary rounded bg-active p-3 mt-4 row">
@@ -35,9 +35,8 @@
             </div>
         </div>        
     </div>
-   </div>
-
 </form>
+   </div>
 
 @section Scripts{
     @{

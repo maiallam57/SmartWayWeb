@@ -19,10 +19,12 @@ body {
 
 
 
-*** Carousel Start ***/
+/*** Carousel Start ***/
 
 .carousel-item {
+    background-attachment: fixed;
     position: relative;
+    width: 100%;
 }
 
 .carousel-item::after {
@@ -49,60 +51,53 @@ body {
 }
 
 .carousel-control-prev {
-    width: 50px;
+    width: 40px;
     height: 40px;
     position: absolute;
     top: 50%;
     left: 0;
-    background: var(--bs-primary);
-    border-radius: 0 50px 50px 0;
-    opacity: 0.3;
+    opacity: 0.2;
 }
 
     .carousel-control-prev:hover {
-        background: var(--bs-secondary);
+        background: #e72323;
         transition: .8s;
     }
 
 .carousel-control-next {
-    width: 50px;
+    width: 40px;
     height: 40px;
     position: absolute;
     top: 50%;
     right: 0;
-    background: var(--bs-primary);
-    border-radius: 50px 0 0 50px;
-    opacity: 0.3;
+    opacity: 0.2;
 }
 
     .carousel-control-next:hover {
-        background: var(--bs-secondary);
+        background: #e72323;
         transition: .8s;
     }
 
 .carousel-caption .carousel-content a button.carousel-content-btn1 {
-    background: var(--bs-secondary);
+    background: #e72323;
     color: var(--bs-dark);
     opacity: 1;
     border: 0;
-    border-radius: 20px;
 }
 
-    .carousel-caption .carousel-content a button.carousel-content-btn1:hover {
-        background: var(--bs-primary);
-        color: #ffffff;
-        border: 0;
-        opacity: 1;
-        transition: 1s;
-        border-radius: 20px;
-    }
+.carousel-caption .carousel-content a button.carousel-content-btn1:hover {
+    background: var(--bs-primary);
+    color: #ffffff;
+    border: 0;
+    opacity: 1;
+    transition: 1s;
+}
 
 .carousel-caption .carousel-content a button.carousel-content-btn2 {
     background: var(--bs-primary);
     color: var(--bs-white);
     opacity: 1;
     border: 0;
-    border-radius: 20px;
 }
 
     .carousel-caption .carousel-content a button.carousel-content-btn2:hover {
@@ -115,70 +110,56 @@ body {
     }
 
 #carouselId .carousel-indicators li {
-    width: 17px;
+    width: 16px;
     height: 0px;
-    background: var(--bs-primary);
+    background: #e72323;
     margin: 10px;
-    border-radius: 15px;
-    opacity: 0.3;
+    border-radius: 60%;
+    opacity: 0.2;
 }
 
     #carouselId .carousel-indicators li:hover {
         background: var(--bs-secondary);
-        opacity: 0.5;
+        opacity: 0.3;
     }
 
-@media (max-width: 992px) {
+@media (min-width: 1024px) {
     .carousel-item {
-        min-height: 500px;
+        text-align: center;
+        min-height: 450px;
     }
 
-        .carousel-item img {
-            min-height: 500px;
-            object-fit: cover;
-        }
+    .carousel-item img {
+        text-align: center;
+        max-height: 450px;
+        min-width: 100%;
+        object-fit: cover;
+    }
 
-        .carousel-item h1 {
-            font-size: 40px !important;
-        }
+    .carousel-item h1 {
+        text-align: center;
+        font-size: 40px !important;
+    }
 
-        .carousel-item p {
-            font-size: 16px !important;
-        }
+    .carousel-item p {
+        font-size: 16px !important;
+    }
 }
 
-@media (max-width: 768px) {
-    .carousel-item {
-        min-height: 400px;
-    }
-
-        .carousel-item img {
-            min-height: 400px;
-            object-fit: cover;
-        }
-
-        .carousel-item h1 {
-            font-size: 28px !important;
-        }
-
-        .carousel-item p {
-            font-size: 14px !important;
-        }
-}
 
 .page-header {
     background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
 }
 
-    .page-header .breadcrumb-item + .breadcrumb-item::before {
-        color: var(--bs-white);
-    }
+.page-header .breadcrumb-item + .breadcrumb-item::before {
+    color: var(--bs-white);
+}
 
-    .page-header .breadcrumb-item,
-    .page-header .breadcrumb-item a {
-        font-size: 18px;
-        color: var(--bs-white);
-    }
+.page-header .breadcrumb-item,
+.page-header .breadcrumb-item a {
+    font-size: 18px;
+    color: var(--bs-white);
+}
 
 /*** Carousel End ***/

@@ -1,0 +1,155 @@
+﻿@{
+    ViewData["Title"] = "Project Page";
+}
+@model IEnumerable<SmartWay.Models.Project>
+
+
+
+
+
+<!-- ======= Projects Section ======= -->
+<section id="Projects" class="portfolio">
+    <div class="container">
+
+    <div class="section-title">
+        <span>Projects</span>
+        <h2>Projects</h2>
+    </div>
+
+    <div class="row" data-aos="fade-up">
+        <div class="col-lg-12 d-flex justify-content-center">
+        <ul id="portfolio-flters">
+            <li data-filter="*" class="filter-active">All</li>
+
+            <li data-filter=".filter-app">App</li>
+            <li data-filter=".filter-card">Card</li>
+            <li data-filter=".filter-web">Web</li>
+        </ul>
+        </div>
+    </div>
+
+    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="150">
+        @foreach (var product in Model)
+            {
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <img src="data:image/*;base64,@(Convert.ToBase64String(product.ProjectImage))" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                    <h4>@product.Name</h4>
+                    <p>@product.Description</p>
+                    <a href="~/data:image/*;base64,@(Convert.ToBase64String(product.ProjectImage))" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="product.Name">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg>
+                    </a>
+                    <a asp-controller="Project" asp-action="Details" class="details-link" title="Details">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+                            <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+                            <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+                        </svg>
+                    </a>
+                </div>
+                </div>
+            }
+
+
+
+
+       @* <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <img src="~/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+        <div class="portfolio-info">
+            <h4>App 1</h4>
+            <p>App</p>
+            <a href="~/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+            <a href="~/portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <img src="~/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+        <div class="portfolio-info">
+            <h4>Web 3</h4>
+            <p>Web</p>
+            <a href="~/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+            <a href="~/portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <img src="~/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+        <div class="portfolio-info">
+            <h4>App 2</h4>
+            <p>App</p>
+            <a href="~/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+            <a href="~/portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+        <img src="~/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+        <div class="portfolio-info">
+            <h4>Card 2</h4>
+            <p>Card</p>
+            <a href="~/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+            <a href="~/portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <img src="~/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+        <div class="portfolio-info">
+            <h4>Web 2</h4>
+            <p>Web</p>
+            <a href="~/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+            <a href="~/portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <img src="img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+        <div class="portfolio-info">
+            <h4>App 3</h4>
+            <p>App</p>
+            <a href="~/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+            <a href="~/portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+        <img src="~/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+        <div class="portfolio-info">
+            <h4>Card 1</h4>
+            <p>Card</p>
+            <a href="~/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+            <a href="~/portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+        <img src="~/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+        <div class="portfolio-info">
+            <h4>Card 3</h4>
+            <p>Card</p>
+            <a href="~/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+            <a href="~/portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+        </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <img src="~/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+        <div class="portfolio-info">
+            <h4>Web 3</h4>
+            <p>Web</p>
+            <a href="~/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+            <a href="~/portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+        </div>
+        </div>*@
+
+    </div>
+
+    </div>
+</section><!-- End Projects Section -->
+
+@section Scripts{
+    <partial name="_Notification" />
+    <partial name="_ValidationScriptsPartial" />
+}

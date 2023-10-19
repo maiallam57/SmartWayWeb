@@ -27,6 +27,12 @@ $(".team-carousel").owlCarousel({
         },
         992: {
             items: 3
+        },
+        768: {
+            items: 4
+        },
+        992: {
+            items: 5
         }
     }
 });

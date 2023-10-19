@@ -27,6 +27,23 @@ namespace SmartWay.Areas.Customer.Controllers
             TempData["success"] = "Your Messege Sended Successfully";
             return View();
            
+        }  
+       
+        public IActionResult About()
+        {
+            return View();
+        }        
+        public IActionResult CompanyProfile()
+        {
+            return View();
+        }        
+        public IActionResult KeyPersonnal()
+        {
+            return View();
+        }        
+        public IActionResult OurTeam()
+        {
+            return View();
         }
 
         public IActionResult Error()
