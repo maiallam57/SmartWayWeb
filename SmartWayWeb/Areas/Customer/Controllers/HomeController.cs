@@ -21,7 +21,6 @@ namespace SmartWay.Areas.Customer.Controllers
         [HttpPost]
         public IActionResult Index(UserContact User)
         {
-            //IEnumerable<Project> projectList = _unitOfWork.Project.GetAll(includeProperties: "Category");
             _unitOfWork.UserContact.Add(User);
             _unitOfWork.Save();
             TempData["success"] = "Your Messege Sended Successfully";
