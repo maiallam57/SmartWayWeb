@@ -21,27 +21,33 @@
         <ul id="portfolio-flters">
             <li data-filter="*" class="filter-active">All</li>
 
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-card">Card</li>
-            <li data-filter=".filter-web">Web</li>
+            <li data-filter=".filter-app">Banks</li>
+            <li data-filter=".filter-card">Airport & Airlines</li>
+            <li data-filter=".filter-web">Health Care & Hospitals</li>
+            <li data-filter=".filter-web">Hotels & Resorts</li>
+            <li data-filter=".filter-web">Malls</li>
+            <li data-filter=".filter-web">Oil & Gas</li>
+            <li data-filter=".filter-web">Restaurants</li>
+            <li data-filter=".filter-web">Developers</li>
+            <li data-filter=".filter-web">Schools</li>
         </ul>
         </div>
     </div>
 
     <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="150">
-        @foreach (var product in Model)
+        @foreach (var project in Model)
             {
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                <img src="data:image/*;base64,@(Convert.ToBase64String(product.ProjectImage))" class="img-fluid" alt="">
+                <img src="data:image/*;base64,@(Convert.ToBase64String(project.ProjectImage))" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                    <h4>@product.Name</h4>
-                    <p>@product.Description</p>
-                    <a href="~/data:image/*;base64,@(Convert.ToBase64String(product.ProjectImage))" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="product.Name">
+                    <h4>@project.Name</h4>
+                    <p>@project.Description</p>
+                    <a href="~/data:image/*;base64,@(Convert.ToBase64String(project.ProjectImage))" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="product.Name">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                           <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                         </svg>
                     </a>
-                    <a asp-controller="Project" asp-action="Details" class="details-link" title="Details">
+                    <a asp-area="Customer" asp-controller="Project" asp-action="Details" class="details-link" title="Details">
                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
                             <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
                             <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>

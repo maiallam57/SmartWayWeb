@@ -43,6 +43,22 @@ namespace SmartWay.Areas.Customer.Controllers
         public IActionResult OurTeam()
         {
             return View();
+        }        
+        public IActionResult Services()
+        {
+            return View();
+        }         
+        public IActionResult Careers()
+        {
+            return View();
+        }     
+        
+        public IActionResult Contact(UserContact User)
+        {
+            _unitOfWork.UserContact.Add(User);
+            _unitOfWork.Save();
+            TempData["success"] = "Your Messege Sended Successfully";
+            return View();
         }
 
         public IActionResult Error()

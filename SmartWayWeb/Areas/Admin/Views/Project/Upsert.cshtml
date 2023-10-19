@@ -1,8 +1,10 @@
 ﻿@model SmartWay.Models.ViewModels.ProjectVM
 
+
 <form method="post" asp-action= "Upsert" enctype="multipart/form-data"> @*to upload*@
     <input asp-for="Project.Id" hidden />
     <input id="uploaded" hidden type="file" asp-for="Project.ProjectImage" name="file"/>
+    <div class="container">
     <div class="row">
          <div class="col-8">
           
@@ -65,6 +67,7 @@
         
     </div>
    </div>
+</div>
 
 </form>
 

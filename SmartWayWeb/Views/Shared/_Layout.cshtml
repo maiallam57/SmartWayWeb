@@ -40,7 +40,7 @@
         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
         <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
         </div>
     </div>
     </section>
@@ -73,9 +73,9 @@
                 <li><a href="#">Project 3</a></li>
                 <li><a href="#">Project 4</a></li>
             </ul>
-            <li><a class="nav-link scrollto" href="#services">Services</a></li>
-            <li><a class="nav-link scrollto" href="#">Careers</a></li>
-            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <li><a class="nav-link scrollto" asp-area="Customer" asp-controller="Home" asp-action="Services">Services</a></li>
+            <li><a class="nav-link scrollto" asp-area="Customer" asp-controller="Home" asp-action="Careers">Careers</a></li>
+            <li><a class="nav-link scrollto" href="../Areas/Customer/Views/Home/Index.cshtml/#contact">Contact</a></li>
 
             @if (User.IsInRole(SD.Role_Admin))
             {
@@ -106,9 +106,8 @@
     </div>
 
 
-    <section class="my-4">
-    <br />
-    <br />
+    <section>
+
     </section>
 
   <!-- ======= Footer ======= -->
@@ -147,37 +146,37 @@
                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                     </svg>&nbsp
-                      <a href="#">Home</a>
+                      <a asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
                   </li>
                   <li class="mb-2" style="padding: 0px; margin:0px;">
                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                     </svg>&nbsp               
-                    <a href="#">About us</a>
+                    <a asp-area="Customer" asp-controller="Home" asp-action="About">About us</a>
                 </li>
                   <li class="mb-2" style="padding: 0px; margin:0px;">
                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                     </svg>&nbsp
-                    <a href="#">Services</a>
+                    <a asp-area="Customer" asp-controller="Home" asp-action="Services">Services</a>
                       </li>
                   <li class="mb-2" style="padding: 0px; margin:0px;">
                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                     </svg>&nbsp
-                      <a href="#">Projects</a>
+                      <a asp-area="Customer" asp-controller="Project" asp-action="Index">Projects</a>
                       </li>
                   <li class="mb-2" style="padding: 0px; margin:0px;">
                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                     </svg>&nbsp
-                      <a href="#">Careers</a>
+                      <a asp-area="Customer" asp-controller="Home" asp-action="Careers">Careers</a>
                       </li>             
                     <li class="mb-2" style="padding: 0px; margin:0px;">
                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                     </svg>&nbsp
-                      <a href="#">Contact us</a>
+                      <a asp-area="Customer" asp-controller="Home" asp-action="Contact">Contact us</a>
                       </li>
                 </ul>
           </div>
