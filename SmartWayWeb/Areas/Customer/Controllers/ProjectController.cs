@@ -19,9 +19,9 @@ namespace SmartWay.Areas.Customer.Controllers
             return View(projectList);        
         }        
 
-        public IActionResult Details(int projectId)
+        public async Task<IActionResult> Details(int projectId)
         {
-            Project project = _unitOfWork.Project.GetFirstOrDefault(u => u.Id == projectId, includeProperties: "Category");
+            var project = await _unitOfWork.Project.FirstOrDefaultAsync(u => u.Id == projectId);
             return View(project);
         }
 

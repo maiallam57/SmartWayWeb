@@ -37,7 +37,16 @@ namespace SmartWay.DataAccess.Repository
             }
             return query.ToList();
         }
+        public async Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> filter = null, params Expression<Func<T, object>>[] includeProperties)
+        {
+            IQueryable<T> query = dbSet;
+            var obj = filter != null ? query.Where(filter) : query;
 
+            if (includeProperties != null)
+                obj = includeProperties.Aggregate(obj, (record, property) => record.Include(property));
+
+            return await obj.FirstOrDefaultAsync();
+        }
 
         public T GetFirstOrDefault(Expression<Func<T, bool>> filter, string? includeProperties = null, bool tracked = true)
         {

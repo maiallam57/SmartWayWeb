@@ -51,8 +51,14 @@ namespace SmartWay.Areas.Customer.Controllers
         public IActionResult Careers()
         {
             return View();
-        }     
+        } 
+        [HttpGet]
+        public IActionResult Contact()
+        {
+            return View();
+        }  
         
+        [HttpPost]
         public IActionResult Contact(UserContact User)
         {
             _unitOfWork.UserContact.Add(User);
