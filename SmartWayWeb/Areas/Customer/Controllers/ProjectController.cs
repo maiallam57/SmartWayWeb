@@ -17,13 +17,19 @@ namespace SmartWay.Areas.Customer.Controllers
         {
             IEnumerable<Project> projectList = _unitOfWork.Project.GetAll(includeProperties: "Category");
             return View(projectList);        
-        }        
-
-        public async Task<IActionResult> Details(int projectId)
+        }    
+        
+        public async Task<IActionResult> Details(int id)
         {
-            var project = await _unitOfWork.Project.FirstOrDefaultAsync(u => u.Id == projectId);
-            return View(project);
+            var prject = await _unitOfWork.Project.FirstOrDefaultAsync(a => a.Id == id, includeProperties: c => c.Category);
+
+            if (prject == null)
+                return NotFound();
+
+            return View(prject);
+
         }
+
 
         public IActionResult Error()
         {
